@@ -138,6 +138,10 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EP-KX-cQd">
                                 <rect key="frame" x="144" y="319" width="50" height="30"/>
                                 <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartButton:" destination="Tu5-mf-IPy" eventType="touchUpInside" id="Zzi-Zf-r7L"/>
+                                    <segue destination="036-0a-KGX" kind="show" id="ZMX-iD-fDc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceO-zP-k9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="201"/>
+            <point key="canvasLocation" x="1454" y="924"/>
         </scene>
     </scenes>
     <resources>
