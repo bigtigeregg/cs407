@@ -1,25 +1,161 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="036-0a-KGX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Image Question View Controller-->
+        <scene sceneID="dFh-Fy-JFI">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="036-0a-KGX" customClass="imageQuestionViewController" customModule="cs407hw1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="ye6-2C-vC4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ImB-Z4-IzB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="FdF-S0-1ce">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGG-0K-qhi">
+                                <rect key="frame" x="112" y="367" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What is the name of this team?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-Si-lXq">
+                                <rect key="frame" x="42" y="294" width="237" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Z-Yo-FVZ">
+                                <rect key="frame" x="136" y="437" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="imageQuestionSubmit:" destination="036-0a-KGX" eventType="touchUpInside" id="U2F-XI-QpK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="liverpool.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oVF-Pn-TDm">
+                                <rect key="frame" x="180" y="98" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XaQ-Si-lXq" firstAttribute="centerX" secondItem="oVF-Pn-TDm" secondAttribute="centerX" id="E4m-mX-YqU"/>
+                            <constraint firstItem="32Z-Yo-FVZ" firstAttribute="centerX" secondItem="XaQ-Si-lXq" secondAttribute="centerX" id="Gth-Zr-xa1"/>
+                            <constraint firstItem="32Z-Yo-FVZ" firstAttribute="centerX" secondItem="VGG-0K-qhi" secondAttribute="centerX" id="KAn-bC-SEo"/>
+                            <constraint firstItem="VGG-0K-qhi" firstAttribute="centerX" secondItem="XaQ-Si-lXq" secondAttribute="centerX" id="S01-87-6ab"/>
+                            <constraint firstItem="oVF-Pn-TDm" firstAttribute="centerX" secondItem="FdF-S0-1ce" secondAttribute="centerX" id="ctw-RN-Uh5"/>
+                            <constraint firstItem="oVF-Pn-TDm" firstAttribute="centerX" secondItem="FdF-S0-1ce" secondAttribute="centerX" id="zcp-qW-nae"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="teamEditText" destination="VGG-0K-qhi" id="PaC-79-iPd"/>
+                        <segue destination="feC-eh-Utf" kind="presentation" identifier="totextQuestionViewController" id="kjS-KT-AHz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OoE-Zu-Fti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1026" y="201"/>
+        </scene>
+        <!--Text Question View Controller-->
+        <scene sceneID="vyt-Po-1MQ">
+            <objects>
+                <viewController id="feC-eh-Utf" customClass="textQuestionViewController" customModule="cs407hw1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eh9-0c-2Ld"/>
+                        <viewControllerLayoutGuide type="bottom" id="Blv-Sa-U1z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BD1-gg-WxX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What is micheal owen number?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6O-nm-GAl">
+                                <rect key="frame" x="41" y="201" width="238" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PA-BC-zvW">
+                                <rect key="frame" x="112" y="269" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzA-XR-Big">
+                                <rect key="frame" x="136" y="382" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="textQuestionSubmit:" destination="feC-eh-Utf" eventType="touchUpInside" id="Btq-NX-lWh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C6O-nm-GAl" firstAttribute="centerX" secondItem="BD1-gg-WxX" secondAttribute="centerX" id="2DU-Tt-nDD"/>
+                            <constraint firstItem="1PA-BC-zvW" firstAttribute="centerX" secondItem="C6O-nm-GAl" secondAttribute="centerX" id="MfP-OD-1L2"/>
+                            <constraint firstItem="DzA-XR-Big" firstAttribute="centerX" secondItem="C6O-nm-GAl" secondAttribute="centerX" id="fLH-58-zXw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textQuestionEditText" destination="1PA-BC-zvW" id="gTb-dI-e5m"/>
+                        <segue destination="Tu5-mf-IPy" kind="show" identifier="tosummaryPageViewController" id="wDJ-uf-eyt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdW-Db-5cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="210"/>
+        </scene>
+        <!--Summary Page View Controller-->
+        <scene sceneID="F8V-02-A7v">
+            <objects>
+                <viewController id="Tu5-mf-IPy" customClass="summaryPageViewController" customModule="cs407hw1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5eD-fH-nK6"/>
+                        <viewControllerLayoutGuide type="bottom" id="kE1-KX-HnZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zgn-d4-kHc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Summery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ci-UO-7jz">
+                                <rect key="frame" x="132" y="120" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Correct Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MY-Fi-0Tv">
+                                <rect key="frame" x="52" y="235" width="210" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-iQ-jWA">
+                                <rect key="frame" x="304" y="235" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EP-KX-cQd">
+                                <rect key="frame" x="144" y="319" width="50" height="30"/>
+                                <state key="normal" title="Restart"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5EP-KX-cQd" firstAttribute="centerX" secondItem="7Ci-UO-7jz" secondAttribute="centerX" id="GwZ-l3-mMG"/>
+                            <constraint firstItem="7Ci-UO-7jz" firstAttribute="centerX" secondItem="zgn-d4-kHc" secondAttribute="centerX" id="LZy-5c-czF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="correctNum" destination="QUy-iQ-jWA" id="KwY-j5-LAa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceO-zP-k9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2414" y="201"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="liverpool.jpg" width="280" height="200"/>
+    </resources>
 </document>
