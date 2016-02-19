@@ -4,5 +4,6 @@ image question is asking for correct team
 text question is asking the number of my favorite player
 restart is button to retake the quiz
 
-
+wuyue liu
+wliu249@wisc.edu
 youtube link: https://www.youtube.com/watch?v=3EjPs0A4CIQ&feature=youtu.be
